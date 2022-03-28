@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 
 import org.junit.*;
-import java.time.LocalDate;
 
 //import controllayer.ControlPayStation;
 //import controllayer.Currency;
@@ -38,10 +37,6 @@ public class TestDatabaseAccess {
 	@Test
 	public void wasConnected() {
 		assertNotNull("Connected - connection cannot be null", con);
-		
-		con.disconnect();
-		boolean wasNullified = con == null;
-		assertTrue("Disconnected - instance set to null", wasNullified);
 			
 	}
 
