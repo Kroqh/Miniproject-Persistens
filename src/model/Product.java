@@ -3,12 +3,12 @@ package model;
 public class Product {
 	private String name; 
 	private String countryOfOrigin;
-	private int purchasePrice;
-	private int salesPrice;
-	private int rentPrice;
+	private double purchasePrice;
+	private double salesPrice;
+	private double rentPrice;
 	private int minStock;
 	
-	public Product(String name, String countryOfOrigin, int purchasePrice, int salesPrice, int rentPrice, int minStock) {
+	public Product(String name, String countryOfOrigin, double purchasePrice, double salesPrice, double rentPrice, int minStock) {
 		this.name = name;
 		this.countryOfOrigin = countryOfOrigin;
 		this.purchasePrice = purchasePrice;
@@ -33,7 +33,7 @@ public class Product {
 		this.countryOfOrigin = countryOfOrigin;
 	}
 
-	public int getPurchasePrice() {
+	public double getPurchasePrice() {
 		return purchasePrice;
 	}
 
@@ -41,7 +41,7 @@ public class Product {
 		this.purchasePrice = purchasePrice;
 	}
 
-	public int getSalesPrice() {
+	public double getSalesPrice() {
 		return salesPrice;
 	}
 
@@ -49,7 +49,7 @@ public class Product {
 		this.salesPrice = salesPrice;
 	}
 
-	public int getRentPrice() {
+	public double getRentPrice() {
 		return rentPrice;
 	}
 

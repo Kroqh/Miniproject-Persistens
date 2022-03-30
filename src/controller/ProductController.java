@@ -7,8 +7,12 @@ public class ProductController {
 
 	private ProductDB productDB;
 	
-	public Product addProductByName(int name) {
-		return null;
+	public ProductController() {
+		productDB = new ProductDB();
+	}
+	public Product addProductByID(int productId) {
+		Product product = productDB.findProductById(productId);
+		return product;
 	}
 	
 }

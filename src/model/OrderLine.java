@@ -9,4 +9,11 @@ public class OrderLine {
 		this.product = product;
 		this.amount = amount;
 	}
+	public int getQuantity() {
+		return amount;
+	}
+	
+	public Product getProduct() {
+		return product;
+	}
 }

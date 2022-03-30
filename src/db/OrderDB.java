@@ -4,5 +4,7 @@ import model.Order;
 
 public class OrderDB {
 
-	private Order order;
+	public void orderSave(Order order) {
+		//TODO save order
+	}
 }
