@@ -1,5 +1,6 @@
 package controller;
 
+import db.DataAccessException;
 import db.ProductDB;
 import model.Product;
 
@@ -10,8 +11,8 @@ public class ProductController {
 	public ProductController() {
 		productDB = new ProductDB();
 	}
-	public Product addProductByID(int productId) {
-		Product product = productDB.findProductById(productId);
+	public Product findProductByName(String productName) throws DataAccessException {
+		Product product = productDB.findProductByName(productName);
 		return product;
 	}
 	

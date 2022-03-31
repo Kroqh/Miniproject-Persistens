@@ -8,6 +8,7 @@ public class Customer {
 	private String floor;
 	private int zipcode;
 	private int phoneno;
+	private int customerId;
 	
 	public Customer(String firstName,
 					String surName,
@@ -15,7 +16,8 @@ public class Customer {
 					String houseno,
 					String floor,
 					int zipcode,
-					int phoneno) {
+					int phoneno,
+					int customerId) {
 		this.firstName = firstName;
 		this.surName = surName;
 		this.street = street;
@@ -23,6 +25,7 @@ public class Customer {
 		this.floor = floor;
 		this.zipcode = zipcode;
 		this.phoneno = phoneno;
+		this.customerId = customerId;
 		
 	}
 	
@@ -33,5 +36,8 @@ public class Customer {
 		return phoneno;
 	}
 	
+	public int getCustomerId() {
+		return customerId;
+	}
 	
 }

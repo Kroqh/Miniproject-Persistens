@@ -2,13 +2,14 @@ package model;
 
 public class Product {
 	private String name; 
-	private double purchasePrice;
-	private double salesPrice;
-	private double rentPrice;
+	private float purchasePrice;
+	private float salesPrice;
+	private float rentPrice;
 	private int minStock;
 	private int currentStock;
+	private int productID;
 	
-	public Product(String name, float purchasePrice, float salesPrice, float rentPrice, int minStock, int currentStock) {
+	public Product(String name, float purchasePrice, float salesPrice, float rentPrice, int minStock, int currentStock, int productID) {
 
 		this.name = name;
 		this.purchasePrice = purchasePrice;
@@ -16,6 +17,15 @@ public class Product {
 		this.rentPrice = rentPrice;
 		this.minStock = minStock;
 		this.currentStock = currentStock;
+		this.productID = productID;
+	}
+
+	public int getProductID() {
+		return productID;
+	}
+
+	public void setProductID(int productID) {
+		this.productID = productID;
 	}
 
 	public String getName() {
@@ -26,7 +36,7 @@ public class Product {
 		this.name = name;
 	}
 
-	public double getPurchasePrice() {
+	public float getPurchasePrice() {
 		return purchasePrice;
 	}
 
@@ -34,7 +44,7 @@ public class Product {
 		this.purchasePrice = purchasePrice;
 	}
 
-	public double getSalesPrice() {
+	public float getSalesPrice() {
 		return salesPrice;
 	}
 
@@ -42,7 +52,7 @@ public class Product {
 		this.salesPrice = salesPrice;
 	}
 
-	public double getRentPrice() {
+	public float getRentPrice() {
 		return rentPrice;
 	}
 

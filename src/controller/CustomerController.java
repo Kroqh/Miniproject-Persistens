@@ -1,6 +1,7 @@
 package controller;
 
 import db.CustomerDB;
+import db.DataAccessException;
 import model.Customer;
 
 public class CustomerController {
@@ -10,7 +11,7 @@ public class CustomerController {
 	public CustomerController() {
 		customerDB = new CustomerDB();
 	}
-	public Customer addCustomerByPhone(int phoneno) {
+	public Customer findCustomerByPhone(int phoneno) throws DataAccessException {
 		
 		Customer customer = customerDB.findCustomerByPhone(phoneno);
 		return customer;

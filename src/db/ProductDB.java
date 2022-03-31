@@ -12,7 +12,7 @@ import model.Product;
 public class ProductDB {
 	
 
-	public Product findProductById(int productId) throws DataAccessException {
+	public Product findProductByName(String productName) throws DataAccessException {
 		Connection con = DBConnection.getInstance().getConnection();
 		Product product = null;
 		
@@ -20,7 +20,7 @@ public class ProductDB {
 		baseSelect += "left outer join Clothing on Products.id = Clothing.fk_ProductId ";
 		baseSelect += "left outer join Equipment on Products.id = Equipment.fk_ProductId ";
 		baseSelect += "left outer join GunReplica on Products.id = GunReplica.fk_ProductId ";
-		baseSelect += "where id = " + productId + ";";
+		baseSelect += "where name = " + "'" +productName + "';";
 		
 		ResultSet rs = null;
 		String name = null;
@@ -35,6 +35,7 @@ public class ProductDB {
 		float rentPrice = 0;
 		int minStock = 0;
 		int currentStock = 0;
+		int productID = 0;
 		
 		try {
 			Statement stmt = con.createStatement();
@@ -52,27 +53,23 @@ public class ProductDB {
 			rentPrice = rs.getFloat("rentPrice");
 			minStock = rs.getInt("minStock");
 			currentStock = rs.getInt("currentStock");
+			productID = rs.getInt("id");
+			
 			
 			stmt.close();
 			
 			if (color != null) {
-				product = new Clothing(size, color, name, purchasePrice, salesPrice, rentPrice, minStock, currentStock);
+				product = new Clothing(size, color, name, purchasePrice, salesPrice, rentPrice, minStock, currentStock, productID);
 			}
 			else if (material != null) {
-				product = new GunReplica(calibre, material, name,  purchasePrice, salesPrice, rentPrice, minStock, currentStock);
+				product = new GunReplica(calibre, material, name,  purchasePrice, salesPrice, rentPrice, minStock, currentStock, productID);
 			}
 			else if (type != null) {
-				product = new Equipment(type, description, name, purchasePrice, salesPrice, rentPrice,
-			minStock, currentStock);
+				product = new Equipment(type, description, name, purchasePrice, salesPrice, rentPrice, minStock, currentStock, productID);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		finally {
-			DBConnection.getInstance().disconnect();
-		}
-		
-		
 		return product;
 	}
 }

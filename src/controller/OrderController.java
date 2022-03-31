@@ -4,6 +4,7 @@ import model.Customer;
 import model.Order;
 import model.OrderLine;
 import model.Product;
+import db.DataAccessException;
 import db.OrderDB;
 import db.OrderLineDB;
 
@@ -15,6 +16,7 @@ public class OrderController {
 	private OrderLineDB orderLineDB;
 	private Order currentOrder;
 	
+	
 	public OrderController() {
 		customerController = new CustomerController();
 		productController = new ProductController();
@@ -22,21 +24,20 @@ public class OrderController {
 		orderLineDB = new OrderLineDB();
 	}
 	
-	public void addProductByID(int productID, int quantity) {
-		Product product = productController.addProductByID(productID);
+	public void findProductByName(String productName, int quantity) throws DataAccessException {
+		Product product = productController.findProductByName(productName);
 		addOrderLine(product, quantity);
 	}
 	
-	public void addCustomerByPhone(int phoneno) {
-		Customer customer = customerController.addCustomerByPhone(phoneno);
+	public void findCustomerByPhone(int phoneno) throws DataAccessException {
+		Customer customer = customerController.findCustomerByPhone(phoneno);
 		currentOrder.addCustomer(customer);
 	}
-	public void orderSave() {
-		orderDB.orderSave(currentOrder);
+	public void orderSave() throws DataAccessException {
+		int orderId = orderDB.orderSave(currentOrder);
 		for (OrderLine ol : currentOrder.getOrderlines()) {
-			orderLineDB.orderLineSave(ol);
+			orderLineDB.orderLineSave(ol, orderId);
 		}
-
 	}
 	
 	public void createOrder() {
@@ -51,7 +52,19 @@ public class OrderController {
 	}
 	
 	public double getTotal() {
-		return currentOrder.getTotal();
+		return currentOrder.getTotalPrice();
+	}
+	
+	public void setDevliveryDate(String deliveryDate) {
+		currentOrder.setDeliveryDate(deliveryDate);
+	}
+	
+	public void setPaymentDate(String paymentDate) {
+		currentOrder.setPaymentDate(paymentDate);
+	}
+	
+	public void setDeliveryStatus(boolean deliveryStatus) {
+		currentOrder.setDeliveryStatus(deliveryStatus);
 	}
 
 }
