@@ -30,9 +30,9 @@ public class ProductDB {
 		String calibre = null;
 		String type = null;
 		String description = null;
-		double purchasePrice = 0;
-		double salesPrice = 0;
-		double rentPrice = 0;
+		float purchasePrice = 0;
+		float salesPrice = 0;
+		float rentPrice = 0;
 		int minStock = 0;
 		int currentStock = 0;
 		

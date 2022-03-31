@@ -2,7 +2,7 @@ package model;
 
 public class Equipment extends Product {
 	
-	public Equipment(String type, String description, String name, double purchasePrice, double salesPrice, double rentPrice,
+	public Equipment(String type, String description, String name, float purchasePrice, float salesPrice, float rentPrice,
 			int minStock, int currentStock) {
 		super(name, purchasePrice, salesPrice, rentPrice, minStock, currentStock);
 		this.type = type;

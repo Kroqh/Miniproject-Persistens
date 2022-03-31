@@ -6,14 +6,10 @@ public class Product {
 	private double salesPrice;
 	private double rentPrice;
 	private int minStock;
-<<<<<<< Updated upstream
-	
-	public Product(String name, String countryOfOrigin, float purchasePrice, float salesPrice, float rentPrice, int minStock) {
-=======
 	private int currentStock;
+	
+	public Product(String name, float purchasePrice, float salesPrice, float rentPrice, int minStock, int currentStock) {
 
-	public Product(String name, double purchasePrice, double salesPrice, double rentPrice, int minStock, int currentStock) {
->>>>>>> Stashed changes
 		this.name = name;
 		this.purchasePrice = purchasePrice;
 		this.salesPrice = salesPrice;
