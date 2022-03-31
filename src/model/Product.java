@@ -2,19 +2,24 @@ package model;
 
 public class Product {
 	private String name; 
-	private String countryOfOrigin;
 	private double purchasePrice;
 	private double salesPrice;
 	private double rentPrice;
 	private int minStock;
+<<<<<<< Updated upstream
 	
 	public Product(String name, String countryOfOrigin, float purchasePrice, float salesPrice, float rentPrice, int minStock) {
+=======
+	private int currentStock;
+
+	public Product(String name, double purchasePrice, double salesPrice, double rentPrice, int minStock, int currentStock) {
+>>>>>>> Stashed changes
 		this.name = name;
-		this.countryOfOrigin = countryOfOrigin;
 		this.purchasePrice = purchasePrice;
 		this.salesPrice = salesPrice;
 		this.rentPrice = rentPrice;
 		this.minStock = minStock;
+		this.currentStock = currentStock;
 	}
 
 	public String getName() {
@@ -23,14 +28,6 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getCountryOfOrigin() {
-		return countryOfOrigin;
-	}
-
-	public void setCountryOfOrigin(String countryOfOrigin) {
-		this.countryOfOrigin = countryOfOrigin;
 	}
 
 	public double getPurchasePrice() {
@@ -63,6 +60,14 @@ public class Product {
 
 	public void setMinStock(int minStock) {
 		this.minStock = minStock;
+	}
+	
+	public int getCurrentStock() {
+		return currentStock;
+	}
+
+	public void setCurrentStock(int currentStock) {
+		this.currentStock = currentStock;
 	}
 	
 	
