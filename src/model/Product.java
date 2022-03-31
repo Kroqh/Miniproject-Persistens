@@ -8,7 +8,7 @@ public class Product {
 	private double rentPrice;
 	private int minStock;
 	
-	public Product(String name, String countryOfOrigin, double purchasePrice, double salesPrice, double rentPrice, int minStock) {
+	public Product(String name, String countryOfOrigin, float purchasePrice, float salesPrice, float rentPrice, int minStock) {
 		this.name = name;
 		this.countryOfOrigin = countryOfOrigin;
 		this.purchasePrice = purchasePrice;
@@ -37,7 +37,7 @@ public class Product {
 		return purchasePrice;
 	}
 
-	public void setPurchasePrice(int purchasePrice) {
+	public void setPurchasePrice(float purchasePrice) {
 		this.purchasePrice = purchasePrice;
 	}
 
@@ -45,7 +45,7 @@ public class Product {
 		return salesPrice;
 	}
 
-	public void setSalesPrice(int salesPrice) {
+	public void setSalesPrice(float salesPrice) {
 		this.salesPrice = salesPrice;
 	}
 
@@ -53,7 +53,7 @@ public class Product {
 		return rentPrice;
 	}
 
-	public void setRentPrice(int rentPrice) {
+	public void setRentPrice(float rentPrice) {
 		this.rentPrice = rentPrice;
 	}
 
