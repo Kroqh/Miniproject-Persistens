@@ -1,7 +1,7 @@
 package controller;
 
 import model.Customer;
-import model.Order;
+import model.SaleOrder;
 import model.OrderLine;
 import model.Product;
 import db.DataAccessException;
@@ -14,7 +14,7 @@ public class OrderController {
 	private ProductController productController;
 	private OrderDB orderDB;
 	private OrderLineDB orderLineDB;
-	private Order currentOrder;
+	private SaleOrder currentOrder;
 	
 	
 	public OrderController() {
@@ -41,9 +41,9 @@ public class OrderController {
 	}
 	
 	public void createOrder() {
-		currentOrder = new Order();
+		currentOrder = new SaleOrder();
 	}
-	public Order getOrder() {
+	public SaleOrder getOrder() {
 		return currentOrder;
 	}
 	

@@ -8,12 +8,12 @@ import model.OrderLine;
 
 public class OrderLineDB {
 	
-	public void orderLineSave(OrderLine ol, int orderId) throws DataAccessException {
+	public void orderLineSave(OrderLine orderLine, int orderId) throws DataAccessException {
 		
 		Connection con = DBConnection.getInstance().getConnection();
 		
-		String baseInsert = "insert into OrderLines (fk_OrderID, fk_ProductID, amount) values ";
-		baseInsert += "(" + orderId + ", " + ol.getProductID() + ", " + ol.getQuantity() + ");";
+		String baseInsert = "insert into OrderLines (fk_OrderID, fk_ProductID, quantity) values ";
+		baseInsert += "(" + orderId + ", " + orderLine.getProductID() + ", " + orderLine.getQuantity() + ");";
 		System.out.println(baseInsert);
 		
 		try {

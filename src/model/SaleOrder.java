@@ -3,7 +3,7 @@ package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Order {
+public class SaleOrder {
 	
 	private ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
 	private String date;
@@ -13,7 +13,7 @@ public class Order {
 	private float totalPrice;
 	private String paymentDate;
 	
-	public Order() {
+	public SaleOrder() {
 		setDate();
 	}
 	

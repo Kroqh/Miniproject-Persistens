@@ -5,11 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import model.Order;
+import model.SaleOrder;
 
 public class OrderDB {
 
-	public int orderSave(Order order) throws DataAccessException {
+	public int orderSave(SaleOrder order) throws DataAccessException {
 		int insertedKey = 1;
 		Connection con = DBConnection.getInstance().getConnection();
 		

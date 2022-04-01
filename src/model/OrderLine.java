@@ -3,14 +3,14 @@ package model;
 public class OrderLine {
 	
 	private Product product;
-	private int amount;
+	private int quantity;
 
-	public OrderLine(Product product, int amount) {
+	public OrderLine(Product product, int quantity) {
 		this.product = product;
-		this.amount = amount;
+		this.quantity = quantity;
 	}
 	public int getQuantity() {
-		return amount;
+		return quantity;
 	}
 	
 	public Product getProduct() {
