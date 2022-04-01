@@ -13,15 +13,9 @@ public class OrderDB {
 		int insertedKey = 1;
 		Connection con = DBConnection.getInstance().getConnection();
 		
-		int customerId = order.getCustomerId();
-		String date = order.getDate();
-		boolean deliveryStatus = order.getDeliveryStatus();
-		String deliveryDate = order.getDeliveryDate();
-		String paymentDate = order.getPaymentDate();
-		
-		
+
 		String baseInsert = "insert into SaleOrders (fk_customerID, date, deliveryStatus, deliveryDate, paymentDate) values ";
-		baseInsert += "(" + customerId + ", '" + date + "', '" + deliveryStatus + "', '" + deliveryDate + "', '" + paymentDate + "')";
+		baseInsert += "(" + order.getCustomerId() + ", '" + order.getDate() + "', '" + order.getDeliveryStatus() + "', '" + order.getDeliveryDate() + "', '" + order.getPaymentDate() + "')";
 		System.out.println(baseInsert);
 
 		

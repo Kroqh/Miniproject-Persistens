@@ -2,6 +2,8 @@ package controller;
 
 import db.DataAccessException;
 
+//This class exists sorely to execute the program with hardcoded data to test the systems execution of inserting data onto the database
+
 public class Start {
 	
 	private static OrderController oc;
